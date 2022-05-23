@@ -47,58 +47,20 @@ Set Matplotlib visualizations to display inline in the notebook
 
 ### Loading Data
 
-bom_df = pd.read_csv("bom.movie_gross.csv",index_col=0)
-bom_df.head(5)
-Looking at the info printout
-bom_df.info()
-bom_df.isna().sum()
-Title_df = pd.read_csv("imdb.title.basics.csv", index_col=0)
-Title_df.head()
-Title_df.info()
-Title_df.isna().sum()
-Ratings_df = pd.read_csv("imdb.title.ratings.csv.gz",index_col=0)
-Ratings_df.head()
-Ratings_df.info()
-Ratings_df.isna().sum()
+<p>bom_df = pd.read_csv("bom.movie_gross.csv",index_col=0)</p>
+
+<p>Title_df = pd.read_csv("imdb.title.basics.csv", index_col=0)</p>
+
+<p>Ratings_df = pd.read_csv("imdb.title.ratings.csv.gz",index_col=0)</p>
+
 
 ## Data Cleaning
-### Identifying and Handling Missing Values
 
-bom_df.info()
-bom_df.dtypes
+<p> Identifying and handling NAN values </p>
 
-# Removing the comma in currency 
+<p> Replacing NAN values with median() for the numerical data </p>
 
-<p>bom_df['foreign_gross'] = bom_df['foreign_gross'].str.replace(',','')
-
-#Converting the foreign gross from object to float to allow calculations
-bom_df = bom_df.astype({'foreign_gross':float})
-bom_df['domestic_gross'].fillna(bom_df['domestic_gross'].median(), inplace=True)
-
-bom_df['foreign_gross'].fillna(bom_df['foreign_gross'].median(), inplace=True)
-
-bom_df['studio'].fillna('Missing', inplace=True)
-
-#creating a new column WorldWide_gross for the summation of Domestic and Foreign gross
-bom_df['WorldWide_gross'] = bom_df['domestic_gross'] + bom_df['foreign_gross']
-#Making sure there are no NAN values after the cleaning
-bom_df.isna().sum()
-"""
-Dealing with the numerical data by replacing the NAN values with their median value and for the categorical data replacing the NAN values with a descriptive word 'Missing'
-"""
-Title_df.info()
-Title_df.isna().sum()
-Title_df['original_title'].fillna('Missing',inplace=True)
-
-Title_df['runtime_minutes'].fillna(Title_df['runtime_minutes'].median(), inplace=True)
-
-Title_df['genres'].fillna('Missing', inplace=True)
-#Making sure there are no NAN values after the cleaning
-Title_df.isna().sum()
-"""
-Dealing with the numerical data by replacing the NAN values with their median value and for the categorical data replacing the NAN values with a descriptive word 'Missing'
-"""
-Ratings_df.isna().sum()</p>
+<p> Replacing NAN values with a descriptive word 'Missing' </p>
 
 ## Data Visualization
 
@@ -108,27 +70,15 @@ Ratings_df.isna().sum()</p>
 <img src="Title_VS_WorldWide_gross.png" alt="Title_VS_WorldWide_gross">
 
 
-
 ### Question 2: What Genres of films are currently doing best at box office?
 
-
-
 #### I : In terms of Worldwide Gross income
-
 
 
 <img src="Genres_VS_WorldWide_gross.png" alt="Genres_VS_WorldWide_gross">
 
 
-Analysis of the visualisation
-"""
-Analysis of the top 30 performing genres in terms of the WorldWide_gross income they generated
-"""
-#merging Title_df and Ratings_df on the column tconst
-Title_Rating_df = pd.merge(Title_df, Ratings_df, on='tconst')
-
 #### II : In terms of Ratings
-
 
 
 <img src="Genres_VS_Ratings.png" alt="Genres_VS_Ratings">
@@ -159,7 +109,7 @@ Title_Rating_df = pd.merge(Title_df, Ratings_df, on='tconst')
 
 <p>There is weak positive correlation between WorldWide gross and average rating of 0.059501</p>	
 
-)
+
 
 <img src="Scatter_WorldWide_gross_VS_Ratings.png">
 
