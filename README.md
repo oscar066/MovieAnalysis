@@ -12,9 +12,13 @@ Microsoft sees all the big companies creating original video content and they wa
 ## Objectives
 
 1. Importing the required libraries
+
 2. Loading Data from the files
+
 3. Data understanding by analysing the data
+
 4. Data Cleaning and handling of NAN values in the datasets
+
 5. Data Visualisation 
 
 ## Sources of My Datasets
@@ -32,16 +36,6 @@ Microsoft sees all the big companies creating original video content and they wa
 . Import and alias matplotlib.pyplot as plt
 
 . Import and alias seaborn as sns
-
-Set Matplotlib visualizations to display inline in the notebook
-
-<p>import pandas as pd</p>
-
-<p>import matplotlib.pyplot as plt</p>
-
-<p>import seaborn as sns</p>
-
-<p>%matplotlib inline</p>
 
 ## Data Understanding
 
