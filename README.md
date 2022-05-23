@@ -109,7 +109,7 @@ Microsoft sees all the big companies creating original video content and they wa
 
 <p>This shows a weak positive correlation as the average rating increases the WorldWide gross may increase or it may not increase and the trend line is slightly positive</p>
 
-### Question 4: What is the relationship between number of votes and the average rating
+### Question 5: What is the relationship between number of votes and the average rating
 
 <p>pearsoncorr_2 = budget_Title_Ratings_df.corr(method='pearson')</p>
 
@@ -122,7 +122,7 @@ Microsoft sees all the big companies creating original video content and they wa
 
 <p>There is a positive correlation between Number of votes and the average ratings of the movie and the trend line is positive</p>
 
-### Question 5: What is the relationship between the number of votes and the WorldWide gross?
+### Question 6: What is the relationship between the number of votes and the WorldWide gross?
 
 <p>earsoncorr_3 = budget_Title_Ratings_df.corr(method='pearson')</p>
 
