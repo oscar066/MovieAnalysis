@@ -27,16 +27,20 @@ Microsoft sees all the big companies creating original video content and they wa
 
 ## Importing Libraries
 
-Importing and alias Pandas as pd
-Import and alias matplotlib.pyplot as plt
+. Importing and alias Pandas as pd
 
-Import and alias seaborn as sns
+. Import and alias matplotlib.pyplot as plt
+
+. Import and alias seaborn as sns
 
 Set Matplotlib visualizations to display inline in the notebook
 
 import pandas as pd
+
 import matplotlib.pyplot as plt
+
 import seaborn as sns
+
 %matplotlib inline
 
 ## Data Understanding
@@ -66,6 +70,7 @@ bom_df.dtypes
 # Removing the comma in currency 
 
 bom_df['foreign_gross'] = bom_df['foreign_gross'].str.replace(',','')
+
 #Converting the foreign gross from object to float to allow calculations
 bom_df = bom_df.astype({'foreign_gross':float})
 bom_df['domestic_gross'].fillna(bom_df['domestic_gross'].median(), inplace=True)
@@ -73,6 +78,7 @@ bom_df['domestic_gross'].fillna(bom_df['domestic_gross'].median(), inplace=True)
 bom_df['foreign_gross'].fillna(bom_df['foreign_gross'].median(), inplace=True)
 
 bom_df['studio'].fillna('Missing', inplace=True)
+
 #creating a new column WorldWide_gross for the summation of Domestic and Foreign gross
 bom_df['WorldWide_gross'] = bom_df['domestic_gross'] + bom_df['foreign_gross']
 #Making sure there are no NAN values after the cleaning
@@ -122,6 +128,7 @@ plt.xticks(fontsize=15)
 plt.yticks(fontsize=15)
 bar.savefig("Title_VS_WorldWide_gross.png")
 
+<img src="Title_VS_WorldWide_gross.png" alt="Title_VS_WorldWide_gross">
 
 Analsis of the bar plot
 """
@@ -157,6 +164,8 @@ plt.xticks(fontsize=15)
 plt.yticks(fontsize=15)
 bar.savefig("Genres_VS_WorldWide_gross.png")
 
+<img src="Genres_VS_WorldWide_gross.png" alt="Genres_VS_WorldWide_gross">
+
 
 Analysis of the visualisation
 """
@@ -187,7 +196,7 @@ plt.xticks(fontsize=15)
 plt.yticks(fontsize=15)
 bar.savefig("Genres_VS_Ratings.png")
 
-
+<img src="Genres_VS_Ratings.png" alt="Genres_VS_Ratings">
 """
 Analysis of the top 20 performing genres in relation to their ratings
 """
@@ -206,7 +215,7 @@ ax.set_xlabel('Number of votes',fontsize= 24)
 plt.xticks(fontsize=15)
 plt.yticks(fontsize=15)
 bar.savefig("Genres_VS_NumVotes.png")
-
+<img src="Genres_VS_NumVotes.png" alt="Genres_VS_NumVotes">
 
 ### Question 3: What is the relationship between genres and foreign and domestic gross income?
 
@@ -228,6 +237,8 @@ plt.xticks(fontsize=15)
 plt.yticks(fontsize=15)
 bar.savefig("Genres_VS_Domestic_gross.png")
 
+<img src="Genres_VS_Domestic_gross.png" alt="Genres_VS_Domestic_gross">
+
 
 #### II. Foreign gross vs genres
 
@@ -246,6 +257,7 @@ ax.set_xlabel('Foreign gross ($)',fontsize= 24)
 plt.xticks(fontsize=15)
 plt.yticks(fontsize=15)
 bar.savefig("Genres_VS_foreign_gross.png")
+<img src="Genres_VS_foreign_gross.png">
 
 
 ### Question 4: What is the relationship between Worldwide gross income and Ratings
@@ -271,6 +283,8 @@ ax.set_title("WorldWide_gross vs Ratings",fontsize=24);
 plt.xticks(fontsize=16)
 plt.yticks(fontsize=16)
 plt.savefig("Scatter_WorldWide_gross_VS_Ratings.png")
+
+<img src="Scatter_WorldWide_gross_VS_Ratings.png">
 """
 This shows a weak positive correlation as the average rating increases the WorldWide gross may increase or it may not increase and the trend line is slightly positive
 """
@@ -296,6 +310,8 @@ ax.set_title("Number of Votes vs Ratings",fontsize=24);
 plt.xticks(fontsize=16)
 plt.yticks(fontsize=16)
 plt.savefig("Scatter_NumVotes_VS_Ratings.png")
+
+<img src="Scatter_NumVotes_VS_Ratings.png">
 """
 There is a positive correlation between Number of votes and the average ratings of the movie and the trend line is positive
 """
@@ -321,6 +337,8 @@ ax.set_title("Num of Votes Vs. WorldWide gross",fontsize=24);
 plt.xticks(fontsize=16)
 plt.yticks(fontsize=16)
 plt.savefig("Scatter_NumVotes_VS_WorldWide_gross.png")
+
+<img src="Scatter_NumVotes_VS_WorldWide_gross.png">
 """
 There is a positive correlation between the num of votes and the WorldWide gross as the trend line is positive
 """
